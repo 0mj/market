@@ -64,19 +64,25 @@ class FarmController extends Controller
      */
     public function edit(Farm $farm)
     {
-        //
+        $markets = App\Market::get()->pluck('name', 'id')->sortBy('name');
+        // return view('farms.edit', ['farm'=> $farm]);
+        return view('farms.edit', compact('farm', 'markets')); # shorthand for ['farm' => $farm, 'markets' => $markets]
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Farm  $farm
+     * @param  \App\Farm  $farm NOT USED ** NOT USED **  NOT USED
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Farm $farm)
+    // public function update(Request $request, Farm $farm)
+    public function update(Request $request)
     {
-        //
+        $farm->update($request->all());
+        $farm->markets()->sync($request->markets);
+        return redirect('farms');
     }
 
     /**
