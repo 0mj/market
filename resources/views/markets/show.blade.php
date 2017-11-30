@@ -6,3 +6,5 @@
  <li>Website: {{ $market->website }}</li>
 </ul>
 @endsection
+
+
