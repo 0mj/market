@@ -11,19 +11,54 @@
 |
 */
 
+# -------------- laravel generic route --------------- 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+
+
 # --------------- pluralsight getting started w laravel --------------
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('blog', function () {
+    return view('blog.index');
+})->name('blog.index');
 
+// Route::get('post/{id}', function () {
+//     return view('blog.post');
+// })->name('blog.post');
 
-Route::get('post/{id}', function () {
-    return view('blog.post');
-});
+Route::get('about', function () {
+    return view('other.about');
+})->name('other.about');
+
+Route::get('admin', function () {
+    return view('admin.index');
+})->name('admin.index');
+
+// Route::get('create', function () {
+//     return view('admin.create');
+// })->name('admin.create');
+
+// Route::post('create', function() {
+//     return "It works!";
+// })->name('admin.create');
+
+// Route::get('edit/{id}', function () {
+//     return view('admin.edit');
+// })->name('admin.edit');
+
+// Route::get('post/{id}', function () {
+//     return view('blog.post');
+// });
 
 # --------------- code school ------------------- 
-// Route::get('/', 'MarketController@index');
-// Route::resource('markets', 'MarketController');
+Route::get('/', 'MarketController@index');
+Route::resource('markets', 'MarketController');
+
+// Route::get('markets', function () {
+//     return view('markets.index');
+// })->name('markets.index');
 
 # NOT COMPLETE..
 // Route::get('/', 'FarmController@index');

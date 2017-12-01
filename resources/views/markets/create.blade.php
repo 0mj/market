@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('main')
+@extends('layouts.master')
+@section('content')
 
 
 <form action="{{ route('markets.store') }}" method="post">

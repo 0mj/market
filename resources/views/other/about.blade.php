@@ -4,8 +4,9 @@
 
     <div class="row">
         <div class="col">
-            <h1>this renders from welcome.blade.php </h1>
-            <p>welcome...</p>
+            <h1>About Fran Zappernick</h1>
+            
+            <p>F zap was a great gal...</p>
         </div>
 
     </div>

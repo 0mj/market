@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('main')
+@extends('layouts.master')
+@section('content')
 <h1>{{ $market->name }}</h1>
 <ul>
  <li>Location City: {{ $market->city }}</li>

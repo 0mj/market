@@ -1,13 +1,15 @@
 @extends('layouts.master')
-
 @section('content')
 
-    <div class="row">
+
+
+
+ <div class="row">
         <div class="col">
-            <h1>this renders from welcome.blade.php </h1>
-            <p>welcome...</p>
+            <h1>Admin </h1>
+            
+            <p>admin ...</p>
         </div>
 
     </div>
-
 @endsection
