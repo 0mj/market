@@ -4,8 +4,8 @@
 
     <div class="row">
         <div class="col">
-            <h1>this renders from welcome.blade.php </h1>
-            <p>welcome...</p>
+            <h1>Farmers Markets --> Ping Pong </h1>
+            <p>welcome to farming ping pong</p>
         </div>
 
     </div>

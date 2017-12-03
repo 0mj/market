@@ -2,6 +2,8 @@
 @section('content')
 <div class="row">
 	<div class="col">
+	
+
 		<ul>
 			@foreach($markets as $market)
 				<li>
