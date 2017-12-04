@@ -16,17 +16,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome.index');
 
-
-
-
 # --------------- pluralsight getting started w laravel --------------
 Route::get('blog', function () {
     return view('blog.index');
 })->name('blog.index');
 
-// Route::get('post/{id}', function () {
-//     return view('blog.post');
-// })->name('blog.post');
+Route::get('post/{id}', function () {
+    return view('blog.post');
+})->name('blog.post');
 
 Route::get('about', function () {
     return view('other.about');
