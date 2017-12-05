@@ -6,7 +6,7 @@
         <div class="col">
             <h1>About Fran Zappernick</h1>
             
-            <p>F zap was a great gal...</p>
+            <p>Fran Zappernick is a farmer, markerter and a ponger!</p>
         </div>
 
     </div>
