@@ -4,8 +4,8 @@
 
     <div class="row">
         <div class="col">
-            <h1>Farmers Markets & Pongers</h1>
-            <p>Welcome to farming ping pong</p>
+            
+            <p>Welcome to ..</p>
         </div>
 
     </div>
