@@ -58,6 +58,6 @@ Route::resource('markets', 'MarketController');
 //     return view('markets.index');
 // })->name('markets.index');
 
-# NOT COMPLETE..
+
 Route::get('farms', 'FarmController@index');
 Route::resource('farms', 'FarmController');
