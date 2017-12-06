@@ -20,6 +20,7 @@
 		
 		<form action="{{ route('markets.store') }}" method="post">
 				{{ csrf_field() }}
+				<br>
 		<label for="name">Market Name</label>
 			<input type="text" name="name"><br><br>
 			<label for="city">Market City</label>

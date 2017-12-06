@@ -11,6 +11,9 @@
         <a class="nav-link" href="{{ route('blog.index') }}">Blog <span class="sr-only">(current)</span></a>
       </li> -->
       <li class="nav-item">
+        <a class="nav-link" href="{{ route('pongers.index') }}">PONGERS</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="{{ route('farms.index') }}">FARMS</a>
       </li>
       <li class="nav-item">

@@ -14,7 +14,7 @@ class MarketController extends Controller
      */
     public function index()
     {
-        $markets = Market::orderBy('name', 'asc')->paginate(9);
+        $markets = Market::orderBy('name', 'asc')->paginate(15);
         return view('markets.index', ['markets' => $markets ]);
     }
 
@@ -66,7 +66,7 @@ class MarketController extends Controller
      */
     public function edit(Market $market)
     {
-        //
+        return view('markets.edit', ['market' => $market]);
     }
 
     /**
@@ -78,7 +78,8 @@ class MarketController extends Controller
      */
     public function update(Request $request, Market $market)
     {
-        //
+        $market->update($request->all());
+        return redirect('markets');
     }
 
     /**

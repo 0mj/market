@@ -61,3 +61,7 @@ Route::resource('markets', 'MarketController');
 
 Route::get('farms', 'FarmController@index');
 Route::resource('farms', 'FarmController');
+
+
+Route::get('pongers', 'PongerController@index');
+Route::resource('pongers', 'PongerController');

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Farm;
+use App\Ponger;
 use Illuminate\Http\Request;
 
-class FarmController extends Controller
+class PongerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class FarmController extends Controller
      */
     public function index()
     {
-        $farms = Farm::orderBy('name', 'asc')->paginate(25);
-        return view('farms.index', ['farms' => $farms ]);
+        $pongers = Ponger::orderBy('first_name', 'asc')->paginate(9);
+        return view('pongers.index', ['pongers' => $pongers ]);
     }
 
     /**
@@ -25,7 +25,7 @@ class FarmController extends Controller
      */
     public function create()
     {
-        return view('farms.create');
+        return view('pongers.create');
     }
 
     /**
@@ -37,61 +37,62 @@ class FarmController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'bail|required|unique:farms|max:255',
-            'website' => 'bail|required',
+            'first_name' => 'bail|required',
+            'last_name' => 'bail|required',
             'city' => 'bail|required',
+            'state' => 'bail|required',
+            'age' => 'bail|required',
+            'height' => 'bail|required',
+            'swing_hand' => 'bail|required',
+            'win' => 'bail|required',
+            'loss' => 'bail|required',
+            
         ]);
-        Farm::create($request->all());
-        return redirect('farms');
+        Ponger::create($request->all());
+        return redirect('pongers');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Farm  $farm
+     * @param  \App\Ponger  $ponger
      * @return \Illuminate\Http\Response
      */
-    public function show(Farm $farm)
+    public function show(Ponger $ponger)
     {
-        return view('farms.show', ['farm' => $farm ]);
+        return view('pongers.show', ['ponger' => $ponger ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Farm  $farm
+     * @param  \App\Ponger  $ponger
      * @return \Illuminate\Http\Response
      */
-    public function edit(Farm $farm)
+    public function edit(Ponger $ponger)
     {
-        $markets = App\Market::get()->pluck('name', 'id')->sortBy('name');
-        // return view('farms.edit', ['farm'=> $farm]);
-        return view('farms.edit', compact('farm', 'markets')); # shorthand for ['farm' => $farm, 'markets' => $markets]
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Farm  $farm NOT USED ** NOT USED **  NOT USED
+     * @param  \App\Ponger  $ponger
      * @return \Illuminate\Http\Response
      */
-    // public function update(Request $request, Farm $farm)
-    public function update(Request $request)
+    public function update(Request $request, Ponger $ponger)
     {
-        $farm->update($request->all());
-        $farm->markets()->sync($request->markets);
-        return redirect('farms');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Farm  $farm
+     * @param  \App\Ponger  $ponger
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Farm $farm)
+    public function destroy(Ponger $ponger)
     {
         //
     }
