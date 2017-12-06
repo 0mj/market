@@ -64,10 +64,9 @@ class FarmController extends Controller
      */
     public function edit(Farm $farm)
     {
-        $markets = App\Market::get()->pluck('name', 'id')->sortBy('name');
-        // return view('farms.edit', ['farm'=> $farm]);
-        return view('farms.edit', compact('farm', 'markets')); # shorthand for ['farm' => $farm, 'markets' => $markets]
-
+      $markets = \App\Market::get()->pluck('name', 'id')->sortBy('name');
+     // return view('farms.edit', ['farm'=> $farm]);
+      return view('farms.edit', compact('farm', 'markets'));// return view('farms.edit', ['farm'=> $farm]);
     }
 
     /**
@@ -78,7 +77,7 @@ class FarmController extends Controller
      * @return \Illuminate\Http\Response
      */
     // public function update(Request $request, Farm $farm)
-    public function update(Request $request)
+    public function update(Request $request, Farm $farm)
     {
         $farm->update($request->all());
         $farm->markets()->sync($request->markets);
@@ -93,6 +92,7 @@ class FarmController extends Controller
      */
     public function destroy(Farm $farm)
     {
-        //
+        $farm->delete();
+      return redirect('farms');
     }
 }
