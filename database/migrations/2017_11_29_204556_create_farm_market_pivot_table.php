@@ -22,13 +22,11 @@ class CreateFarmMarketPivotTable extends Migration
     {
         Schema::create('farm_market', function (Blueprint $table) {
             $table->increments('id');
-              $table->integer('farm_id')->unsigned()->index();
-            $table->foreign('farm_id')->references('id')
-               ->on('farms')->onDelete('cascade');
+            $table->integer('farm_id')->unsigned()->index();
+            $table->foreign('farm_id')->references('id')->on('farms')->onDelete('cascade');
 
             $table->integer('market_id')->unsigned()->index();
-            $table->foreign('market_id')->references('id')
-                ->on('markets')->onDelete('cascade');
+            $table->foreign('market_id')->references('id')->on('markets')->onDelete('cascade');
             $table->timestamps();
         });
     }

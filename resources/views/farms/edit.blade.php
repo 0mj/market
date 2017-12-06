@@ -1,28 +1,36 @@
-<form action="{{ route('markets.update', $farm) }}" method="post">
-	{{ method_field('patch') }}
+@extends('layouts.master')
+<!-- @section('title', "Edit $farm->name" ) -->
+@section('content')
 
-	<!-- when we used pluck() we created a collection where the
-		key is the id of the market and the $market->name is
-		the value-->
-	@foreach ($markets as $id => $market)
-		<div>
-			 <label for="{{ $market }}">
-			 	<!-- here, we will create a checkbox with the name of the market and the value of the market id-->
-			 	<!--markets[] will return an array of checked values to our request object in the controller-->
-			 	<input type="checkbox" name="markets[]" value="{{ $id }}"> 
+<!-- <div class="row justify-content-center"> -->
+  <!-- <div class="col-md-6"> -->
+    <h1 class="h4 text-uppercase">Edit</h1>
 
-			 	<!-- this ternary if statement will return the text 'checked' if our farm->markets has the $id present in a collection -->
-			 	{{ $farm->markets()
-			 		->allRelatedIds()
-			 		->contains($id) ? "checked" : "" }}>
-			 	{{ $market }}
-			 </label>
-		</div>
+    <!-- <div class="card"> -->
+      <!-- <div class="card-block"> -->
+        <h1 class="h3 pb-1">{{ $farm->name }}</h1>
+        <form action="{{ url('farms', $farm) }}" method="post">
+          {{ csrf_field() }}
+          {{ method_field('patch') }}
+          <!-- <div class="form-group"> -->
+            <label for="name">Farm Name</label>
+            <input type="text" class="form-control" name="name" value="{{ $farm->name }}">
+          <!-- </div> -->
+          <!-- <div class="form-group"> -->
+            <label for="city">Farm City</label>
+            <input type="text" class="form-control" name="city" value="{{ $farm->city }}">
+          <!-- </div> -->
+          <!-- <div class="form-group"> -->
+            <label for="website">Farm Website</label>
+            <input type="text" class="form-control" name="website" value="{{ $farm->website }}">
+          <!-- </div> -->
+          <button type="submit" class="btn btn-primary">
+            Update
+          </button>
+        </form>
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </div> -->
 
-	@endforeach
-</form>
-
-
-
-
-
+@endsection
