@@ -14,7 +14,7 @@ class MarketController extends Controller
      */
     public function index()
     {
-        $markets = Market::orderBy('name', 'asc')->paginate(15);
+        $markets = Market::orderBy('name', 'asc')->paginate(9);
         return view('markets.index', ['markets' => $markets ]);
     }
 
