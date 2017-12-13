@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+# -------------- Laravel basics Linkedin Learning -----------
+# -------------- Dependency Injection
+Route::get('/di', 'ClientController@di'); 
+
 
 # -------------- laravel generic route --------------- 
 Route::get('/', function () {
