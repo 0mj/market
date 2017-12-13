@@ -24,6 +24,18 @@ Route::get('/returnArray', function () {
     return $ra;
 });
 
+# Farmets App V. 0.1.1
+# this shows how you can return arrays 
+Route::get('/version', function () {
+    $data = [];
+    $data['version'] = '0.1.1';
+    return view('welcomeOrig', $data);
+});
+
+
+
+
+
 
 
 # -------------- laravel generic route --------------- 
