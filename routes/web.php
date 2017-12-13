@@ -11,8 +11,19 @@
 |
 */
 # -------------- Laravel basics Linkedin Learning -----------
-# -------------- Dependency Injection
+
+# Dependency Injection 
 Route::get('/di', 'ClientController@di'); 
+
+# simple response..  returns php array and browser turns to JSON
+# this is an oversimplified version of an API..
+Route::get('/returnArray', function () {
+    $ra = [];
+    $ra['author'] = 'Matthew Jamison';
+    $ra['version'] = '0.1.1';
+    return $ra;
+});
+
 
 
 # -------------- laravel generic route --------------- 
