@@ -13,7 +13,7 @@
 # -------------- Laravel basics Linkedin Learning -----------
 
 # Dependency Injection 
-Route::get('/di', 'ClientController@di'); 
+// Route::get('/di', 'ClientController@di'); 
 
 # simple response..  returns php array and browser turns to JSON
 # this is an oversimplified version of an API..

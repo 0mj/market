@@ -71,7 +71,8 @@ class PongerController extends Controller
      */
     public function edit(Ponger $ponger)
     {
-        //
+        #SIMPLE EDIT..
+        return view('pongers.edit', ['ponger' => $ponger]);
     }
 
     /**
