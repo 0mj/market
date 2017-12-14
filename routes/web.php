@@ -47,12 +47,67 @@ Route::get('/facades/decrypt', function() {
 	return Crypt::decrypt('eyJpdiI6Ik8xSUVWZ1Rxejh4UzJaUGVYSHFlMXc9PSIsInZhbHVlIjoiOFVIajJ2ODhncTBLUVJENDBcL0ZcL0Z1Wlh5aWJRcW9sNTFoSmhLSFQwMFVzPSIsIm1hYyI6IjEyNjA0ZTMxNzlkNmYyYmMzMmQxNmY5YzdhZGRkZGJlNWJhZWRhZWY1NTVjNDExNGM3OTI3Y2RlOGEzNjhmZWEifQ==');
 });
 
+# using __METHOD__ as placeholder to show where __ is coming from.
+Route::get('/', 'ContentsController@home');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # -------------- laravel generic route --------------- 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome.index');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('welcome.index');
 
 # --------------- pluralsight getting started w laravel --------------
 Route::get('blog', function () {
