@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<h1>{{ $ponger->first_name  }}</h1>
+<h1>{{ $ponger->first_name  }} {{ $ponger->last_name  }}</h1>
 <ul>
  <li>Ponger City: {{ $ponger->city }}</li>
  <li>Ponger State: {{ $ponger->state }}</li>

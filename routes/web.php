@@ -48,7 +48,7 @@ Route::get('/facades/decrypt', function() {
 });
 
 # using __METHOD__ as placeholder to show where __ is coming from.
-Route::get('/', 'ContentsController@home');
+// Route::get('/', 'ContentsController@home');
 
 
 
@@ -105,9 +105,10 @@ Route::get('/', 'ContentsController@home');
 
 
 # -------------- laravel generic route --------------- 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('welcome.index');
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome.index');
+
 
 # --------------- pluralsight getting started w laravel --------------
 Route::get('blog', function () {

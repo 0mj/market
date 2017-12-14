@@ -8,8 +8,11 @@
 			@foreach($pongers as $ponger)
 				<li>
 					 <a href="{{ route('pongers.show', $ponger) }}">
-							  {{ $ponger->first_name }}
+							  {{ $ponger->first_name }} {{$ponger->last_name}}
 					 </a>
+					 <small>
+					 	<a href="{{ route('pongers.edit', $ponger)}}">edit</a>
+					 </small>
 				</li>
 			@endforeach
 		</ul>
