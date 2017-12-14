@@ -32,9 +32,20 @@ Route::get('/version', function () {
     return view('welcomeOrig', $data);
 });
 
+# Facades (currently errors as db isnt setup .. )
+Route::get('/facades/db', function () {
+    return DB::select('SELECT * from table');
+});
 
+# ENCRYPT
+Route::get('/facades/encrypt', function () {
+    return Crypt::encrypt('123456789');
+});
 
-
+# DECRYPT
+Route::get('/facades/decrypt', function() {
+	return Crypt::decrypt('eyJpdiI6Ik8xSUVWZ1Rxejh4UzJaUGVYSHFlMXc9PSIsInZhbHVlIjoiOFVIajJ2ODhncTBLUVJENDBcL0ZcL0Z1Wlh5aWJRcW9sNTFoSmhLSFQwMFVzPSIsIm1hYyI6IjEyNjA0ZTMxNzlkNmYyYmMzMmQxNmY5YzdhZGRkZGJlNWJhZWRhZWY1NTVjNDExNGM3OTI3Y2RlOGEzNjhmZWEifQ==');
+});
 
 
 

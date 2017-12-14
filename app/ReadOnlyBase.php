@@ -17,6 +17,6 @@ class ReadOnlyBase
     public function get($id)
     {
 
-    	return $this->titles_array[$id];
+    	return $this->titles_array[$id]
     }
 }
