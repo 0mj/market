@@ -55,55 +55,6 @@ Route::get('/facades/decrypt', function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # -------------- laravel generic route --------------- 
 Route::get('/', function () {
     return view('welcome');
@@ -123,17 +74,17 @@ Route::get('about', function () {
     return view('other.about');
 })->name('other.about');
 
-		Route::get('admin', function () {
-		    return view('admin.index');
-		})->name('admin.index');
+Route::get('admin', function () {
+    return view('admin.index');
+})->name('admin.index');
 
-		Route::get('create', function () {
-		    return view('admin.create');
-		})->name('admin.create');
+Route::get('create', function () {
+    return view('admin.create');
+})->name('admin.create');
 
-		// Route::post('create', function() {
-		//     return "It works!";
-		// })->name('admin.create');
+// Route::post('create', function() {
+//     return "It works!";
+// })->name('admin.create');
 
 Route::get('edit/{id}', function () {
     return view('admin.edit');
