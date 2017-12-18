@@ -64,9 +64,10 @@ class FarmController extends Controller
      */
     public function edit(Farm $farm)
     {
+      # pluck() gets fields you want. sort() by name..
       $markets = \App\Market::get()->pluck('name', 'id')->sortBy('name');
-     // return view('farms.edit', ['farm'=> $farm]);
-      return view('farms.edit', compact('farm', 'markets'));// return view('farms.edit', ['farm'=> $farm]);
+      // return view('farms.edit', ['farm'=> $farm]);
+      return view('farms.edit', compact('farm', 'markets'));
     }
 
     /**

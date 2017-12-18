@@ -21,12 +21,12 @@
 				{{ csrf_field() }}
 <br>
 			<label for="name">Farm Name</label>
-			<input type="text" name="name"><br><br>
+			<input  class="form-control"type="text" name="name">
 			<label for="city">Farm City</label>
-			<input type="text" name="city"><br><br>
+			<input  class="form-control"type="text" name="city">
 			<label for="website">Farm Website</label>
-			<input type="text" name="website"><br><br>
-			<button type="submit">Create</button>
+			<input class="form-control" type="text" name="website">
+			<button class="btn btn-success" type="submit">Create NEW Farm</button>
 		</form>
 
 	</div>

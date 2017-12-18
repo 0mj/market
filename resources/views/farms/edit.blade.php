@@ -25,11 +25,18 @@
           </div>
           <h3 class='h5 pb-2'>Markets</h3>
           <div class="row form-group">
+            <!--
+                When we used pluck() we created a collection 
+                where the key is the id of the market and the $market->name is the value
+
+              -->
             @foreach ($markets as $id => $market)
               <div class="form-check col-md-6">
                 <label class="form-check-label" for="{{ $market }}">
+                  <!-- markets[] returns array of checked values to the request object in the controller  -->
                   <input type="checkbox" name="markets[]" value="{{ $id }}"
                     {{ $farm->markets()->allRelatedIds()->contains($id) ? "checked" : "" }}>
+                  <!-- Here we create a checkbox with the name of the market and the value of the market id.  -->
                   {{ $market }}
                 </label>
               </div>

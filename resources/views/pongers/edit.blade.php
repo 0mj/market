@@ -1,28 +1,52 @@
-<form action="{{ route('markets.update', $farm) }}" method="post">
-	{{ method_field('patch') }}
+@extends('layouts.master')
+@section('content')
 
-	<!-- when we used pluck() we created a collection where the
-		key is the id of the market and the $market->name is
-		the value-->
-	@foreach ($markets as $id => $market)
-		<div>
-			 <label for="{{ $market }}">
-			 	<!-- here, we will create a checkbox with the name of the market and the value of the market id-->
-			 	<!--markets[] will return an array of checked values to our request object in the controller-->
-			 	<input type="checkbox" name="markets[]" value="{{ $id }}"> 
+<div class="row">
+	<div class="col-md-6">
+				
 
-			 	<!-- this ternary if statement will return the text 'checked' if our farm->markets has the $id present in a collection -->
-			 	{{ $farm->markets()
-			 		->allRelatedIds()
-			 		->contains($id) ? "checked" : "" }}>
-			 	{{ $market }}
-			 </label>
-		</div>
+		<form action="{{ url('pongers', $ponger) }}" method="post">
+			{{ csrf_field() }}
+			{{ method_field('patch') }}
 
-	@endforeach
-</form>
+			<label for="first_name">First name</label>
+			<input type="text" name="first_name" class="form-control" value="{{ $ponger->first_name }}">
+			
+			<label for="last_name">last name</label>
+			<input type="text" name="last_name" class="form-control" value="{{ $ponger->last_name }}">
+
+			<label for="city">city</label>
+			<input type="text" name="city" class="form-control" value="{{ $ponger->city }}">
+
+			<label for="state">state</label>
+			<input type="text" name="state" class="form-control" value="{{ $ponger->state }}">
+
+			<label for="age">age</label>
+			<input type="text" name="age" class="form-control" value="{{ $ponger->age }}">
+
+			<label for="height">height</label>
+			<input type="text" name="height" class="form-control" value="{{ $ponger->height }}">
+
+			<label for="swing_hand">swing_hand</label>
+			<input type="text" name="swing_hand" class="form-control" value="{{ $ponger->swing_hand }}">
+
+			<label for="win">win</label>
+			<input type="text" name="win" class="form-control" value="{{ $ponger->win }}">
+
+			<label for="loss">loss</label>
+			<input type="text" name="loss" class="form-control" value="{{ $ponger->loss }}">
+
+			<button type="submit" class="btn btn-primary form-control" >
+			    UPDATE!
+			</button>
+
+		</form>
 
 
+	</div>	
 
+</div>
+
+@endsection
 
 
