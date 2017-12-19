@@ -27,7 +27,14 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        // return __METHOD__;
+        return view('client/index');
+    }
+
+    public function newClient()
+    {
+        // return __METHOD__;
+        return view('client/newClient');
     }
 
     /**
@@ -37,7 +44,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        // return __METHOD__;
+        return view('client/create');
     }
 
     /**
@@ -51,15 +59,11 @@ class ClientController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Client  $client
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Client $client)
+    
+    public function show($client_id)
     {
-        //
+        // return __METHOD__ . ':' . $client_id;
+        return view('client/show');
     }
 
     /**
